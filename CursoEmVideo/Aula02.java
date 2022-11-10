@@ -1,4 +1,3 @@
-package CursoEmVideo;
 //import java.util.Scanner;
 
 public class Aula02{

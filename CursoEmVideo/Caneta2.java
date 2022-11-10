@@ -1,4 +1,3 @@
-package CursoEmVideo;
 
 public class Caneta2 {
     public String modelo;

@@ -3,7 +3,7 @@ public abstract class Animal{
     private int idade;
     private int membros;
 
-    public abstract locomover();
-    public abstract alimentar();
-    public abstract emitirSom();
+    public abstract void locomover();
+    public abstract void alimentar();
+    public abstract void emitirSom();
 }

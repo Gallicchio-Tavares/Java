@@ -39,11 +39,11 @@ public class ControleRemoto implements Controlador{
       }
     
       public void ligar(){
-        this.setLigado(true);
+        this.isLigado(true);
       }
     
       public void desligar(){
-        this.setLigado(false);
+        this.isLigado(false);
       }
     
       public void abrirMenu(){
@@ -80,18 +80,18 @@ public class ControleRemoto implements Controlador{
       public void desligarMudo(){
         if(this.getLigado() && this.getVolume() == 0){ 
            this.setVolume(50);
+        }
       }
     
       public void play(){
         if(this.getLigado() && !(this.getTocando())){
-          this.setTocando(true);
+          this.isTocando(true);
         }
       }
     
       public void pause(){
          if(this.getLigado() && this.getTocando()){
-          this.setTocando(false);
+          this.isTocando(false);
         }
       }
   }
-}

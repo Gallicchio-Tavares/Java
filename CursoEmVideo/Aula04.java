@@ -1,5 +1,3 @@
-package CursoEmVideo;
-
 public class Aula04 {
     // métodos acecssores e modificadores (getters + setters)
     /*

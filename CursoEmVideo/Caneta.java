@@ -1,5 +1,3 @@
-package CursoEmVideo;
-
 public class Caneta {
     String modelo;
     String cor;

@@ -1,5 +1,3 @@
-package CursoEmVideo;
-
 public class Aula03 {
     // + (público), a classe atual e todas as outras classes podem acessar.
     // - (privado), somente a classe atual pode acessar.
