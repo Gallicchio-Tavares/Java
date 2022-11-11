@@ -14,7 +14,6 @@ public class CarroDePasseio extends VeiculoTerrestre{
 
     public CarroDePasseio(String d, int a, double v) {
         super(d, a, v);
-        //TODO Auto-generated constructor stub
     }
     
 }

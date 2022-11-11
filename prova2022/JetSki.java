@@ -14,12 +14,11 @@ public class JetSki extends VeiculoTerrestre{
 
     public JetSki(String d, int a, double v) {
         super(d, a, v);
-        //TODO Auto-generated constructor stub
     }
     
-    @Override
+    //@Override
     public double calcularPrecoDeVenda(){ // g
-        double valorDesconto = this.getValorVeiculoNovo() - ((0.03 * this.getValorVeiculoNovo()) * (2022 - getAnoFabricacao()));
+        double valorDesconto = this.getValorVeiculoNovo() - this.getValorVeiculoNovo() * (Concessionaria.ANO_CORRENTE - this.getAnoFabricacao()) * 0.03;
         return valorDesconto;
     }
 }

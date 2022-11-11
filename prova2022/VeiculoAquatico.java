@@ -14,6 +14,7 @@ public abstract class VeiculoAquatico extends Veiculo{
 
     public VeiculoAquatico(String d, int a, double v) {
         super(d, a, v);
-        //TODO Auto-generated constructor stub
     }
+
+    public abstract double calcularPrecoDeVenda();
 }

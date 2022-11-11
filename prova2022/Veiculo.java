@@ -29,8 +29,5 @@ public abstract class Veiculo {
 
     // Os veiculos terrestres calculam seu preço de venda
     // descontando 2% do valorVeiculoNovo por cada ano de uso. 
-    public double calcularPrecoDeVenda(){ // e
-        double valorDesconto = this.getValorVeiculoNovo() - ((0.02 * this.getValorVeiculoNovo()) * (2022 - getAnoFabricacao()));
-        return valorDesconto;
-    }
+    public abstract double calcularPrecoDeVenda();
 }

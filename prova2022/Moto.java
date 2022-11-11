@@ -12,15 +12,8 @@ public class Moto extends VeiculoTerrestre{
         this.cilindradas = cilindradas;
     }
 
-    @Override
-    public double calcularPrecoDeVenda() {
-        // TODO Auto-generated method stub
-        return super.calcularPrecoDeVenda();
-    }
-
     public Moto(String d, int a, double v) {
         super(d, a, v);
-        //TODO Auto-generated constructor stub
     }
     
 }
