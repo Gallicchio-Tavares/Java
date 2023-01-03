@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 
-public class Main {
+public class Hashset {
     public static void main(String[] args){
         HashSet<String> x = new HashSet<>(); // em um conjunto não há garantia da ordem do elemento
         // contém todos os que exitem no list: contains(), etc
@@ -12,9 +12,12 @@ public class Main {
         x.add("cama");
         x.add("mesa");
         x.add("casa"); // não está sendo adicionado
+        x.add("Bala");
+        x.add("pedra");
         System.out.println(x.add("asa")); // vai printar true no console e incluir asa no conjunto
         System.out.println(x); // imprimir todos os elementos do hashset entre colchetes
         System.out.println("A média do tamanho das Strings é " + media(x));
+        System.out.println(removerB(x));
 
     }
     // crie um metodo na main que retorna a média do tamanho das strings em um conjunto;
@@ -27,6 +30,17 @@ public class Main {
             soma += s.length(); // soma = o tamanho da string em questao
         }
         return soma/x.size();
+    }
+
+    public static Collection removerB(Collection x){ // remover nomes q começam com B
+        Iterator it = x.iterator();
+        while(it.hasNext()){
+            String i = (String) it.next();
+            if(i.startsWith("b") || i.startsWith("B")){
+                it.remove();
+            }
+        }
+        return x;
     }
 
     // criar um método que retorne a média do comprimento das strings que comecem com a letra c
