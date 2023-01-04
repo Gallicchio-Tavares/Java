@@ -1,6 +1,7 @@
 package lista9;
 import java.util.Scanner;
 import java.util.Iterator;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -32,21 +33,22 @@ public class ProgramaPrincipal{
                 conjuntoAlunos.add(sc.nextLine());
             }
             escola = Utils.retornaDados(conjuntoAlunos);
-            System.out.println(escola); 
         } catch(exceptionUtils e){
             System.out.println(e.getMessage()); // msg da exception
             e.printStackTrace(); // vai aparecer a pilha de erro
         }
-        Utils.ordena((List<Aluno>) escola.values());
+        
+        //Utils.ordena(escola.values());
+        //TO-DO: descobrir como ordenar essa bosta de hashmap se a questão pede lista CARALHO
         System.out.println(" ");
-        // tem q dar um jeito de pegar só os values, pq eles são do tipo Aluno, aí vai dar pra impimir
-        System.out.println(escola.values());
 
-        Iterator<Aluno> it = escola.values().iterator();
+        Collection c = escola.values();
+        Iterator it = c.iterator();
         while(it.hasNext()){
-            Aluno i = it.next();
-            System.out.println(i);
+            Aluno o = (Aluno)it.next();
+            System.out.println(o);
         }
+        
         sc.close();
     }
 }
