@@ -11,7 +11,7 @@ public class Aluno implements Comparable<Aluno>{
 
     @Override
     public String toString() {
-        return this.nome + " " + this.nota + " " + this.id;
+        return this.nome + " " + this.nota;
     }
 
     public void setNome(String nome) {
@@ -31,6 +31,15 @@ public class Aluno implements Comparable<Aluno>{
     }
 
     public int compareTo(Aluno a){
-        return nome.compareTo(a.nome);
+        return this.nome.compareTo(a.getNome());
+    }
+
+    public boolean equals(Object x){ // ver se são iguais
+        if(x instanceof Aluno){
+            Aluno al = (Aluno)x; // transformando o x num aluno pra gnt poder ler o id
+            return this.id.equals(al.getId());
+        } else{
+            return false;
+        }
     }
 }
