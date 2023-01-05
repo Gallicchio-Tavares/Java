@@ -20,37 +20,28 @@ public class Utils{
     // 553-2#Juju Juba#10.0#E
     // formato id, nome, notae  tipo  do Aluno
 
-    /*
-     * Preencha também os nomes e notas dos objetos Pessoa.
-     */
-
-    public static Map<String, Aluno> retornaDados(Set conjuntoAlunos){ //usar iterator
+    public static Map<String, Aluno> retornaDados(Set<String> conjuntoAlunos){ //usar iterator
         // o id vai ser a chave do mapa
         // fazer um split
-        Iterator it = conjuntoAlunos.iterator();
+        Iterator<String> it = conjuntoAlunos.iterator();
         Map<String, Aluno> sla = new HashMap<>();
         while(it.hasNext()){
-            String s = (String)it.next(); // s vai ser um dos elementos da lista pra eu poder mexer
+            String s = it.next(); // s vai ser um dos elementos da lista pra eu poder mexer
             String [] A = s.split("#"); // vou dividir a string a partir da hashtag
+            Aluno al;
             if(s.endsWith("E")){ // aluno especial a ser criado
-                AlunoEspecial al = new AlunoEspecial(A[0]);
-                al.setNome(A[1]);
-                double n = Double.parseDouble(A[2]);
-                al.setNota(n);
-                sla.put(A[0], al);
+                al = new AlunoEspecial(A[0]);
             } 
-            else if(s.endsWith("R")){
-                AlunoRegular al = new AlunoRegular(A[0]);
-                al.setNome(A[1]);
-                double n = Double.parseDouble(A[2]);
-                al.setNota(n);
-                sla.put(A[0], al);
+            else if(s.endsWith("R")){ // ou aluno regular vai ser criado
+                al = new AlunoRegular(A[0]);
             } 
-            else{
+            else{ // se houver erro no input
                 throw new exceptionUtils("Aluno sem tipo");
             }
-            
-            //aaa
+            al.setNome(A[1]);
+            double n = Double.parseDouble(A[2]);
+            al.setNota(n);
+            sla.put(A[0], al);
         }
         return sla; 
     }
